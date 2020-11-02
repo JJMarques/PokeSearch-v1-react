@@ -19,13 +19,14 @@ const PokemonDisplay = (props) => {
         pokemonId = Number(props.match.params.id)
     } else {
         //if we get the name of the pokemon on the params, instead of the id
-        pokemonId = props.match.params.id
+        pokemonId = props.match.params.id.toLowerCase()
     }
+    
 
     useEffect(() => {
 
         const fetchPokemonData = async (pokemonId) => {
-            const result = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemonId.toLowerCase()}`)
+            const result = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
             setPokemonData(result.data)
             setIsLoading(false)
             }
