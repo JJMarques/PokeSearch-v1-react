@@ -25,7 +25,7 @@ const PokemonDisplay = (props) => {
     useEffect(() => {
 
         const fetchPokemonData = async (pokemonId) => {
-            const result = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+            const result = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemonId.toLowerCase()}`)
             setPokemonData(result.data)
             setIsLoading(false)
             }
