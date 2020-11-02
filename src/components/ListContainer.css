@@ -1,0 +1,105 @@
+.list-container {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+}
+.list-bg {
+    background-color: #fff;
+    width: auto;
+    height: 100%;
+}
+.buttons {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4em;
+}
+.buttons.bottom {
+    margin-top: 0;
+    margin-bottom: 4em;
+}
+.buttons button{
+    height: 40px;
+    width: 47%;
+    outline: none;
+    border-radius: 13px;
+    border:1px solid rgba(129, 129, 129, 0);
+    background:  rgb(238, 238, 238);
+    color:rgb(46, 46, 46);
+    font-weight: 500;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: 0.2s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .buttons button.disabled{
+        color:rgb(199, 199, 199);
+        cursor: default;
+    }
+    .buttons button:hover {
+        background:  rgb(216, 216, 216);
+        border:1px solid rgba(129, 129, 129, 0.5);
+    }
+    .buttons button.disabled:hover{
+        background:  rgb(238, 238, 238);
+        border:1px solid rgba(129, 129, 129, 0);
+    }
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 820px;
+    height: 400px;
+}
+.list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2em 4em;
+}
+
+@media screen and (max-width: 830px) {
+
+    .list-container {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2em 0;
+    }
+    .buttons {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0.1em;
+    }
+    .buttons button{
+        width: 45%;
+    }
+
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 400px;
+    }
+  
+}
+
+@media screen and (max-width: 600px) {
+
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 2em 0;
+    }
+  
+}
