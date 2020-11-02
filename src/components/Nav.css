@@ -114,6 +114,7 @@
   }
   .input-search-pokemon {
     width: 280px;
+    height: 44px;
   }
   .input-search-pokemon:focus {
     width: 290px;
@@ -135,6 +136,7 @@
   }
   .input-search-pokemon:focus {
     width: 270px;
+    height: 42px;
   }
   .search-btn {
     padding: 0.8em 2em;
