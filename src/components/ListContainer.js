@@ -5,7 +5,7 @@ import Loading from './animations/Loading'
 import PokemonCard from './PokemonCard';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
-function ListContainer({ pokemonList, fetchUrl, setPokemonList, isLoading, handleFetchUrl }) {
+const ListContainer = ({ pokemonList, fetchUrl, setPokemonList, isLoading, handleFetchUrl }) => {
 
     const pageList = pokemonList.results
     const [currentPageUrl, setCurrentPageUrl] = useState(fetchUrl)
@@ -23,6 +23,7 @@ function ListContainer({ pokemonList, fetchUrl, setPokemonList, isLoading, handl
             }
 
         fetchNewPagePokemons()
+        console.log(pageList);
 
     }, [currentPageUrl, fetchUrl, setPokemonList])
     

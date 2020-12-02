@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from 'axios';
@@ -8,7 +8,7 @@ import ListContainer from './components/ListContainer';
 import PokemonDisplay from './components/PokemonDisplay'
 import Footer from './components/Footer'
 
-function App() {
+const App = () => {
 
   const [isLoading, setIsLoading] = useState(true)
   const [pokemonList, setPokemonList] = useState({});

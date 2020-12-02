@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Nav.css'
+
 import { FaSearch } from 'react-icons/fa'
 import { Link, useHistory } from 'react-router-dom'
 
@@ -54,6 +55,7 @@ const Nav = (props) => {
                         
                     </button>
                 </Link>
+                
             </div>
         </>
     )

@@ -1,88 +1,94 @@
 .nav {
-    height: 380px;
-    width: 100%;
-    background-color: rgb(214, 51, 46);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 3px solid rgb(46, 46, 46);
-  }
+  height: 380px;
+  width: 100%;
+  background-color: rgb(214, 22, 16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 3px solid rgb(46, 46, 46);
+}
 .nav.smaller {
   height: 283px;
 }
-    .logo {
-      margin-top: 1em;
-      color: white;
-      font-size: 3.7em;
-      font-weight: 400;
-    }
+.logo {
+  margin-top: 1em;
+  color: white;
+  font-size: 3.7em;
+  font-weight: 400;
+}
 
-    .nav h5 {
-      color: white;
-      font-weight: 300;
-      font-size: 1em;
-    }
+.nav h5 {
+  color: white;
+  font-weight: 300;
+  font-size: 1em;
+}
 
-    .pokeapi-logo {
-      margin-top: 20px;
-      height: 50px;
-      width: auto;
-    }
-  
-    .nav h1 {
-      margin-top: 70px;
-      color: white;
-      font-weight: 400;
-      font-size: 1.3em;
-      text-align: center;
-      letter-spacing: 0.6px;
-    }
-  
-    .input-search-pokemon {
-      margin-top: 30px;
-      background: #fff;
-      padding: 25px;
-      width: 550px;
-      height: 42px;
-      outline: none;
-      border-radius: 20px;
-      border:3px solid rgb(46, 46, 46);
-      z-index: 2;
-  
-      text-align: center;
-      font-weight: 400;
-      font-size: 1em;
-      transition: 0.2s;
-    }
-    .input-search-pokemon:focus {
-      background: rgb(255, 231, 231);
-      width: 560px;
-      border-bottom: 5px solid rgb(46, 46, 46);
-      font-size: 1.1em;
-    }
-    .search-btn {
-      background: rgb(146, 146, 146);
-      color: rgb(255, 255, 255);
-      padding: 0.8em 2.6em;
-      border:3px solid rgb(46, 46, 46);
-      border-radius: 20px;
-      z-index: 1;
-      margin-top: -4.2em;
-      transform: translateX(218px);
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
-      outline: none;
-    }
-    .search-btn.active {
-      margin-top: -4.3em;
-      transform: translateX(305px);
-    }
-    .search-btn.active:hover {
-      background:rgb(110, 110, 110);
-    }
+.pokeapi-logo {
+  margin-top: 20px;
+  height: 50px;
+  width: auto;
+}
+
+.nav h1 {
+  margin-top: 70px;
+  color: white;
+  font-weight: 400;
+  font-size: 1.3em;
+  text-align: center;
+  letter-spacing: 0.6px;
+}
+
+.input-search-pokemon {
+  margin-top: 30px;
+  background: #fff;
+  padding: 25px;
+  width: 550px;
+  height: 42px;
+  outline: none;
+  border-radius: 20px;
+  border: 3px solid rgb(46, 46, 46);
+  z-index: 2;
+
+  text-align: center;
+  font-weight: 400;
+  font-size: 1em;
+  transition: 0.2s;
+}
+.input-search-pokemon:focus {
+  background: rgb(255, 231, 231);
+  width: 560px;
+  border-bottom: 5px solid rgb(46, 46, 46);
+  font-size: 1.1em;
+}
+.search-btn {
+  background: rgb(146, 146, 146);
+  color: rgb(255, 255, 255);
+  padding: 0.8em 2.6em;
+  border: 3px solid rgb(46, 46, 46);
+  border-radius: 20px;
+  z-index: 1;
+  margin-top: -4.2em;
+  transform: translateX(218px);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+}
+.search-btn.active {
+  margin-top: -4.3em;
+  transform: translateX(305px);
+}
+.search-btn.active:hover {
+  background: rgb(110, 110, 110);
+}
+.autocomplete {
+  background: red;
+  width: 500px;
+  height: auto;
+  z-index: 3;
+  transform: translateY(-32px);
+}
 
 @media screen and (max-width: 850px) {
-
   .nav h1 {
     font-size: 1em;
     width: 200px;
@@ -102,11 +108,9 @@
   .search-btn.active {
     transform: translateX(220px);
   }
-
 }
-  
-@media screen and (max-width: 600px) {
 
+@media screen and (max-width: 600px) {
   .nav h1 {
     font-size: 1em;
     width: 200px;
@@ -126,11 +130,9 @@
   .search-btn.active {
     transform: translateX(165px);
   }
-
 }
 
 @media screen and (max-width: 460px) {
-
   .input-search-pokemon {
     width: 260px;
   }
@@ -145,5 +147,4 @@
   .search-btn.active {
     transform: translateX(156px);
   }
-
 }
