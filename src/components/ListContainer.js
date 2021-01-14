@@ -6,7 +6,6 @@ import PokemonCard from './PokemonCard';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 const ListContainer = ({ pokemonList, fetchUrl, setPokemonList, isLoading, handleFetchUrl }) => {
-
     const pageList = pokemonList.results
     const [currentPageUrl, setCurrentPageUrl] = useState(fetchUrl)
 
@@ -16,15 +15,11 @@ const ListContainer = ({ pokemonList, fetchUrl, setPokemonList, isLoading, handl
     }
 
     useEffect(() => {
-
         const fetchNewPagePokemons = async () => {
-                const result = await axios(currentPageUrl)
-                setPokemonList(result.data)
-            }
-
+            const result = await axios(currentPageUrl)
+            setPokemonList(result.data)
+        }
         fetchNewPagePokemons()
-        console.log(pageList);
-
     }, [currentPageUrl, fetchUrl, setPokemonList])
     
 

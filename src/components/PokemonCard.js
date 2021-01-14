@@ -11,9 +11,7 @@ const PokemonCard = ({item}) => {
     useEffect(() => {
         console.log();
         const fetchPokemonData = async () => {
-            
           const result = await axios(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
-    
           setPokemonData(result.data)
           setIsLoading(false)
         }
@@ -29,7 +27,7 @@ const PokemonCard = ({item}) => {
     : (
         <Link to={`/pokemon/${pokemonData.id}`} style={{ textDecoration: 'none', color: 'rgb(46, 46, 46)' }}>
             <div className="item">
-                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`} alt={pokemonData.name} />    
+                <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />    
                 <h5>{item.name}</h5>    
             </div>
         </Link>
