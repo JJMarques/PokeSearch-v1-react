@@ -25,15 +25,16 @@ const Nav = (props) => {
         <>
             <div className={props.pokemonDisplay === true ? "nav smaller" : "nav"}>
 
-                <h3 className="logo">PokeSearch</h3>
+                <h1 className="logo">PokeSearch</h1>
 
-                <h5>powered by</h5>
+                <h2>powered by</h2>
 
                 <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">
                     <img className="pokeapi-logo" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="logo"/>
                 </a>
 
-                {props.pokemonDisplay === true ? <></> : <h1>Welcome! Search for a Pokemon below. 🔍</h1>}
+                <label>
+                {props.pokemonDisplay === true ? <></> : 'Welcome! Search for a Pokemon below. 🔍'}
                 
                 <input 
                     type="search" 
@@ -45,9 +46,11 @@ const Nav = (props) => {
                     className="input-search-pokemon" 
                     placeholder="Search for a name"
                 />
+                </label>
                 <Link to={search !== "" ? `/pokemon/${search}` : ''} style={{ transform: 'translateY(-33px)' }}>
                     <button 
                         className={navFocus ? "search-btn active" : "search-btn"}
+                        aria-label="Click here to search for a pokemon"
                     >
                         <FaSearch 
                             style={{ height: '25px', width: 'auto' }} 

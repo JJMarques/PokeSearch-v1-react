@@ -28,7 +28,7 @@ const PokemonCard = ({item}) => {
         <Link to={`/pokemon/${pokemonData.id}`} style={{ textDecoration: 'none', color: 'rgb(46, 46, 46)' }}>
             <div className="item">
                 <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />    
-                <h5>{item.name}</h5>    
+                <span>{item.name}</span>    
             </div>
         </Link>
     )

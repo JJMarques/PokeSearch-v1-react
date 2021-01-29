@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 const App = () => {
 
   const [isLoading, setIsLoading] = useState(true)
-  const [pokemonList, setPokemonList] = useState({});
+  const [pokemonList, setPokemonList] = useState(JSON.parse(localStorage.getItem('initalData')) || {});
   const [fetchUrl, setFetchUrl] = useState('https://pokeapi.co/api/v2/pokemon')
 
   const handleFetchUrl = (newFetchUrl) => {
@@ -21,10 +21,15 @@ const App = () => {
   useEffect(() => {
 
     const fetchPokemons = async () => {
-      const result = await axios(fetchUrl)
+      if(Object.keys(pokemonList).length < 1) {
+        const result = await axios(fetchUrl)
 
-      setPokemonList(result.data)
-      setIsLoading(false)
+        setPokemonList(result.data)
+        localStorage.setItem('initalData', JSON.stringify(result.data))
+        setIsLoading(false)
+      } else {
+        setIsLoading(false)
+      }
     }
 
     fetchPokemons()

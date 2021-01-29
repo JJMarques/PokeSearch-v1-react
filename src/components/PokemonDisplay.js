@@ -11,6 +11,7 @@ const PokemonDisplay = (props) => {
 
     const [pokemonData, setPokemonData] = useState({})
     const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(false)
     const pokemonParam = props.match.params.id
 
     let pokemonId
@@ -26,9 +27,14 @@ const PokemonDisplay = (props) => {
     useEffect(() => {
 
         const fetchPokemonData = async (pokemonId) => {
-            const result = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
-            setPokemonData(result.data)
-            setIsLoading(false)
+            try {
+                const result = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+                setPokemonData(result.data)
+                setIsLoading(false)
+                setError(false)
+            } catch {
+                setError(true)
+            }
             }
         
             fetchPokemonData(pokemonId)
@@ -40,6 +46,19 @@ const PokemonDisplay = (props) => {
         pokemonNumberId = pokemonData.id
     } else {
         pokemonNumberId = pokemonId
+    }
+
+    if(error) {
+        return(
+            <div className="list-container">
+                <div className="pokemon-display">
+                    <h2 style={{ marginTop: '60px', marginBottom: '50px' }}>Sorry! Couldn't find that Pokemon!</h2>
+                    <Link to="/" style={{ textDecoration: 'none' }}>
+                        <button className="return-btn"> <AiOutlineArrowLeft /> Return</button>
+                    </Link>
+                </div>
+            </div>
+        )
     }
 
     return isLoading 
