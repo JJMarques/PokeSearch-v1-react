@@ -23,7 +23,7 @@ const Nav = (props) => {
 
     return (
         <>
-            <div className={props.pokemonDisplay === true ? "nav smaller" : "nav"}>
+            <div className="nav">
 
                 <h1 className="logo">PokeSearch</h1>
 
@@ -34,7 +34,7 @@ const Nav = (props) => {
                 </a>
 
                 <label>
-                {props.pokemonDisplay === true ? <></> : 'Welcome! Search for a Pokemon below. 🔍'}
+                {props.pokemonDisplay === true ? 'Search for another Pokemon!' : 'Welcome! Search for a Pokemon below. 🔍'}
                 
                 <input 
                     type="search" 

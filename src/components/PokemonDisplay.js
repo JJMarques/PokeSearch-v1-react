@@ -90,9 +90,9 @@ const PokemonDisplay = (props) => {
                     </Link>
                 </div>
                 <div className="data-display">
-                    <h4 className="pokemon-display-height">Height: <span>{(pokemonData.height)/10}m </span></h4>
-                    <h4 className="pokemon-display-weight">Weight: <span>{(pokemonData.weight)/10} kg </span></h4>
-                    <h4 className="pokemon-display-type">Type: <span>{pokemonData.types[0].type.name} </span></h4>
+                    <p className="pokemon-display-height">Height: <span>{(pokemonData.height)/10}m </span></p>
+                    <p className="pokemon-display-weight">Weight: <span>{(pokemonData.weight)/10} kg </span></p>
+                    <p className="pokemon-display-type">Type: <span>{pokemonData.types[0].type.name} </span></p>
                 </div>
                 <Link to="/" style={{ textDecoration: 'none' }}>
                     <button className="return-btn"> <AiOutlineArrowLeft style={{ marginRight: '5px' }}/> Return</button>

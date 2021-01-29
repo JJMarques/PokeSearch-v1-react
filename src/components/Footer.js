@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <p>Open Sourced on GitHub</p>
-            <h3><span>©</span> José Marques <span>2020</span></h3>
+            <strong><span>©</span> José Marques <span>2020</span></strong>
             <div className="social">
                 <a href="https://github.com/JJMarques" rel="noreferrer" target="_blank" aria-label="Github of José Marques">
                     <SiGithub style={{height: '20px', width: 'auto', marginRight: '20px'}} />

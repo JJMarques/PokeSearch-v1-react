@@ -7,9 +7,6 @@
   align-items: center;
   border-bottom: 3px solid rgb(46, 46, 46);
 }
-.nav.smaller {
-  height: 283px;
-}
 
 .nav h2 {
   color: white;
