@@ -18,6 +18,7 @@ const ListContainer = ({ pokemonList, fetchUrl, setPokemonList, isLoading, handl
         const fetchNewPagePokemons = async () => {
             const result = await axios(currentPageUrl)
             setPokemonList(result.data)
+            document.title = 'Home - PokeSearch'
         }
         fetchNewPagePokemons()
     }, [currentPageUrl, fetchUrl, setPokemonList])

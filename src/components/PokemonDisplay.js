@@ -7,23 +7,22 @@ import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { BiLeftArrowCircle, BiRightArrowCircle } from 'react-icons/bi'
 
-const PokemonDisplay = (props) => {
+const PokemonDisplay = ({ match }) => {
 
     const [pokemonData, setPokemonData] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(false)
-    const pokemonParam = props.match.params.id
+    const pokemonParam = match.params.id
 
     let pokemonId
     if (pokemonParam.length <= 3) {
         //if we get the id of the pokemon on the params
-        pokemonId = Number(props.match.params.id)
+        pokemonId = Number(match.params.id)
     } else {
         //if we get the name of the pokemon on the params, instead of the id
-        pokemonId = props.match.params.id.toLowerCase()
+        pokemonId = match.params.id.toLowerCase()
     }
     
-
     useEffect(() => {
 
         const fetchPokemonData = async (pokemonId) => {
@@ -32,6 +31,7 @@ const PokemonDisplay = (props) => {
                 setPokemonData(result.data)
                 setIsLoading(false)
                 setError(false)
+                document.title = `${pokemonId} | PokeSearch`
             } catch {
                 setError(true)
             }
