@@ -31,6 +31,7 @@ const ListContainer = ({ pokemonList, fetchUrl, setPokemonList, isLoading, handl
                     
                     <button 
                         className={pokemonList.previous ? 'button-change-page' : 'button-change-page disabled' }
+                        disabled={!pokemonList.previous}
                         onClick={pokemonList.previous ? () => changePage(pokemonList.previous) : () => {} }
                     >
                         <AiOutlineArrowLeft style={{ marginRight: '5px' }}/>
@@ -39,6 +40,7 @@ const ListContainer = ({ pokemonList, fetchUrl, setPokemonList, isLoading, handl
 
                     <button 
                         className={pokemonList.next ? 'button-change-page' : 'button-change-page disabled' }
+                        disabled={!pokemonList.next}
                         onClick={pokemonList.next ? () => changePage(pokemonList.next) : () => {}}
                     >
                         Next page<AiOutlineArrowRight style={{ marginLeft: '5px' }}/>
@@ -58,6 +60,7 @@ const ListContainer = ({ pokemonList, fetchUrl, setPokemonList, isLoading, handl
                     
                     <button 
                         className={pokemonList.previous ? 'button-change-page' : 'button-change-page disabled' }
+                        disabled={!pokemonList.previous}
                         onClick={pokemonList.previous ? () => { changePage(pokemonList.previous); window.scrollTo(0,290) } : () => {} }
                     >
                         <AiOutlineArrowLeft style={{ marginRight: '5px' }}/>
@@ -66,6 +69,7 @@ const ListContainer = ({ pokemonList, fetchUrl, setPokemonList, isLoading, handl
 
                     <button 
                         className={pokemonList.next ? 'button-change-page' : 'button-change-page disabled' }
+                        disabled={!pokemonList.next}
                         onClick={pokemonList.next ? () => { changePage(pokemonList.next); window.scrollTo(0,290) } : () => {}}
                     >
                         Next page<AiOutlineArrowRight style={{ marginLeft: '5px' }}/>
